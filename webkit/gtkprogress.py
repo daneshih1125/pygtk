@@ -41,8 +41,6 @@ class WebWindow(Gtk.Window):
         return True
 
 if __name__ == '__main__':
-    global win
-
     tpl = { "progress" : "0" }
     html = ROOT_DIR + "/html/progress.html"
     win = WebWindow(html, tpl)
