@@ -21,8 +21,9 @@ class WebWindow(Gtk.Window):
         fd = open(html, "r")
         self.tmp_page = fd.read()
         fd.close()
+        output_page = self.tmp_page
         for key, value in tpl.items():
-            output_page = self.tmp_page.replace("{%s}" % key, value)
+            output_page = output_page.replace("{%s}" % key, value)
         self.view.load_html_string(output_page, ROOT_DIR + '/html/')
 
     def dispatch(self,view, frame, req, data=None):
